@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,91 +10,64 @@
 
 <style>
 *{
-margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
-body{background:#000;color:#fff;}
-
-/* LOADER */
-#loader{
-position:fixed;
-width:100%;
-height:100vh;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-.loader-text{
-font-size:25px;
-animation:blink 1s infinite;
-}
-
-@keyframes blink{
-0%,100%{opacity:1;}
-50%{opacity:0;}
+body{
+background:#f4f6f9;
+color:#333;
 }
 
 /* NAV */
 nav{
-display:flex;justify-content:space-between;align-items:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
 padding:10px 30px;
-background:rgba(0,0,0,0.5);
-position:fixed;
-width:100%;
-z-index:1000;
+background:#fff;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+position:sticky;
+top:0;
 }
 
-.logo{display:flex;align-items:center;}
-.logo img{width:55px;margin-right:10px;}
+.logo{
+display:flex;
+align-items:center;
+}
 
-nav ul{display:flex;list-style:none;}
-nav ul li{margin-left:20px;}
-nav ul li a{color:white;text-decoration:none;}
+.logo img{
+width:50px;
+margin-right:10px;
+}
 
-/* HERO WITH VIDEO */
+/* HERO */
 .hero{
-position:relative;
-height:100vh;
+height:90vh;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-overflow:hidden;
+background:linear-gradient(to right,#0a58ca,#00c6ff);
+color:white;
 }
-
-.hero video{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-1;
-}
-
-.hero-content{
-z-index:1;
-}
-
-.hero h1{font-size:40px;}
 
 .btn{
-padding:12px 25px;
-background:#00c6ff;
+padding:10px 20px;
 border:none;
-color:white;
-border-radius:25px;
+background:white;
+color:#0a58ca;
+border-radius:20px;
 cursor:pointer;
-margin-top:15px;
 }
 
 /* PRODUCTS */
 .products{
-padding:60px 20px;
+padding:50px;
 text-align:center;
-background:#111;
 }
 
 .cards{
@@ -105,21 +78,40 @@ justify-content:center;
 }
 
 .card{
-background:#222;
+background:white;
 padding:20px;
 width:250px;
 border-radius:10px;
-transition:0.4s;
-}
-
-.card:hover{
-transform:scale(1.05);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+cursor:pointer;
 }
 
 .card img{
 width:100%;
 height:150px;
 object-fit:cover;
+border-radius:10px;
+}
+
+/* DETAILS */
+#productDetails{
+padding:40px;
+text-align:center;
+}
+
+/* MAP */
+.map iframe{
+width:100%;
+height:300px;
+border:0;
+}
+
+/* CONTACT */
+.contact{
+padding:40px;
+text-align:center;
+background:#0a58ca;
+color:white;
 }
 
 /* FLOAT BUTTON */
@@ -128,9 +120,9 @@ position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
+color:white;
 padding:15px;
 border-radius:50%;
-color:white;
 }
 
 .call{
@@ -138,16 +130,17 @@ position:fixed;
 bottom:90px;
 right:20px;
 background:#007bff;
+color:white;
 padding:15px;
 border-radius:50%;
-color:white;
 }
 
 /* FOOTER */
 footer{
 text-align:center;
 padding:15px;
-background:#000;
+background:#111;
+color:white;
 }
 </style>
 
@@ -155,34 +148,18 @@ background:#000;
 
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-<div class="loader-text">Loading...</div>
-</div>
-
 <!-- NAV -->
 <nav>
 <div class="logo">
 <img src="logo.png">
 <h3>Baidhyanath Paint</h3>
 </div>
-
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#products">Products</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-<video autoplay muted loop>
-<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
-</video>
-
-<div class="hero-content">
-<h1>Premium Paint & Sanitary Store</h1>
-<p>All Pipes, Fittings, Paint Available</p>
+<div>
+<h1>All Pipes, Paint & Sanitary Available</h1>
 <button class="btn" onclick="scrollToContact()">Contact</button>
 </div>
 </section>
@@ -220,52 +197,39 @@ background:#000;
 
 </div>
 </section>
-<section id="productDetails" style="padding:50px;text-align:center;">
-<h2>Products Details</h2>
+
+<!-- PRODUCT DETAILS -->
+<section id="productDetails">
+<h2>Product Details</h2>
 <div id="detailsBox"></div>
-</section> 
-  
+</section>
+
 <!-- CONTACT -->
-<section id="contact" style="padding:50px;text-align:center;">
+<section class="contact" id="contact">
 <h2>Contact</h2>
+<p>📍 Chhabilpur Road, Rajgir Nalanda</p>
 <p>📞 8210909879</p>
 </section>
-  
+
+<!-- MAP -->
 <section class="map">
-<iframe 
-src="https://www.google.com/maps?q=Rajgir%20Nalanda&output=embed" 
-width="100%" 
-height="300" 
-style="border:0;">
-</iframe>
+<iframe src="https://www.google.com/maps?q=Rajgir%20Nalanda&output=embed"></iframe>
 </section>
-<!-- FLOAT -->
+
+<!-- FLOAT BUTTON -->
 <a href="https://wa.me/918210909879" class="whatsapp">💬</a>
 <a href="tel:8210909879" class="call">📞</a>
 
 <footer>
-<p>© 2026 Baidhyanath CP & Paint</p>
+<p>© 2026 Baidhyanath CP & Paint House</p>
 </footer>
 
 <script>
-/* Loader */
-window.onload=function(){
-document.getElementById("loader").style.display="none";
-}
 
 /* Scroll */
 function scrollToContact(){
 document.getElementById("contact").scrollIntoView({behavior:"smooth"});
 }
-
-/* Order */
-function orderNow(product){
-let phone="918210909879";
-let msg="Hello, I want to order "+product;
-window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(msg));
-}
-
-<script>
 
 /* Order */
 function orderNow(product){
@@ -295,4 +259,10 @@ document.getElementById("detailsBox").innerHTML = html;
 
 document.getElementById("productDetails").scrollIntoView({behavior:"smooth"});
 }
+
 </script>
+
+</body>
+</html>
+
+
