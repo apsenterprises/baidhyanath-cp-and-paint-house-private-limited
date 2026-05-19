@@ -16,7 +16,28 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
+.hero{
+position:relative;
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+overflow:hidden;
+}
 
+.bg-video{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-1;
+}
+
+.hero-content{
+z-index:1;
+}
 body{
 background:#f4f6f9;
 color:#333;
@@ -156,12 +177,19 @@ color:white;
 </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-<div>
+
+<!-- 🎬 VIDEO -->
+<video autoplay muted loop playsinline class="bg-video">
+<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+</video>
+
+<!-- TEXT -->
+<div class="hero-content">
 <h1>All Pipes, Paint & Sanitary Available</h1>
 <button class="btn" onclick="scrollToContact()">Contact</button>
 </div>
+
 </section>
 
 <!-- PRODUCTS -->
